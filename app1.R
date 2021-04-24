@@ -5,9 +5,8 @@ ui <- fluidPage(
   plotOutput("plot")
 )
 server <- function(input, output, session) {
-  net=reactive(input$price-20)
   output$plot=renderPlot({
-    barplot(c(net=net(), root_of_net=sqrt(net())), col='blue')
+    barplot(c(net=input$price-20, root_of_net=sqrt(input$price-20)), col='blue')
   }, width=400)
 }
 shinyApp(ui, server)
