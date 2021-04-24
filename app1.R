@@ -1,4 +1,4 @@
-#example use of reactive
+#example of reactive programming
 library(shiny)
 ui <- fluidPage(
   numericInput("price", "price", value = 100),
